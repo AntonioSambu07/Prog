@@ -5,6 +5,15 @@
 #include "missil.h"
 #include "defesa.h"
 
+#define MAX_NOME 10 /**< Tamanho máximo do nome da cidade. */
+
+#define QTD_DEF 10 /**< Quantidade máxima de defesas que uma cidade pode ter. */
+#define QTD_MIS 10 /**< Quantidade máxima de mísseis que uma cidade pode ter. */
+
+#define ENCERRAR 'F' /**< Caractere que indica o fim da entrada. */
+#define MISSIL 'M' /**< Caractere que indica um míssil. */
+#define DEFESA 'D' /**< Caractere que indica uma defesa. */
+
 
 /**
  * @brief Estrutura que representa uma cidade.
@@ -14,13 +23,13 @@
  */
 struct cidade {
 
-    int X;
-    int Y;
-    char nomeCidade[50];
+    float X;
+    float Y;
+    char nomeCidade[MAX_NOME];
     int quantMisseis;
     int quantDefesas;
-    tMissil listaMisseis[10];
-    tDefesa listaDefesas[10];
+    tMissil listaMisseis[QTD_MIS];
+    tDefesa listaDefesas[QTD_DEF];
 
 };
 /**
@@ -30,7 +39,9 @@ struct cidade {
  */
 
 tCidade CriaCidade() {
+
     tCidade cidade = (tCidade)malloc(sizeof(struct cidade));
+
     LeEntrada(cidade);
     return cidade;
 }
@@ -45,7 +56,8 @@ tCidade CriaCidade() {
 tCidade LeEntrada(tCidade cidade){
 
     if (cidade != NULL) {
-        scanf("%d%d", &(cidade->X), &(cidade->Y));
+        scanf("%f %f", &(cidade->X), &(cidade->Y));
+
     }
 
 }
@@ -56,6 +68,12 @@ tCidade LeEntrada(tCidade cidade){
  * @param cidade Ponteiro para a cidade que sera impressa.
  */
 void ImprimeCidade(tCidade cidade){
+
+    printf("%s\n", cidade->.nomeCidade);
+
+    printf("%.1f\n%.1f\n", cidade->X, cidade->Y);
+
+    printf("%.%")
 
 }
 

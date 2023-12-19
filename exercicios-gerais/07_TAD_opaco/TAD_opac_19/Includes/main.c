@@ -9,9 +9,17 @@
 int main(){
 
     tCidade cidade;
-    cidade = CriaCidade();
 
-    LiberaCidade(cidade);
+    char c;
+    scanf("%c", &c);
+
+    while (c != 'F') {
+
+        if(c == 'C'){
+            cidade = CriaCidade();
+            LiberaCidade(cidade);
+       }
+    }
 
     return 0;
 }

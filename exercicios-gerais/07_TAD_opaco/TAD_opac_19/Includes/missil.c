@@ -28,10 +28,15 @@ struct missil {
  * @return tMissil Ponteiro para o missil criado.
  */
 tMissil LeMissil(){
-    tMissil missil = (tMissil)malloc(sizeof(struct missil));
+    tMissil novoMissil = (tMissil)malloc(sizeof(struct missil));
 
-    scanf("%c%f%f", &missil->nomeMissil, &missil->X, &missil->Y);
-    return missil;
+    scanf("%s", novoMissil->nomeMissil);
+
+    scanf("%f %f", &novoMissil->X, &novoMissil->Y);
+
+    scanf("%f", &novoMissil->poderAtaque);
+
+    return novoMissil;
 }
 
 /**
@@ -41,6 +46,11 @@ tMissil LeMissil(){
  */
 void ImprimeMissil(tMissil missil){
 
+    printf("%s\n", missil->nomeMissil);
+    printf("%.2f\n", missil->X);
+    printf("%.2f\n", missil->Y);
+    printf("%.2f\n", missil->poderAtaque);
+
 }
 
 /**
@@ -49,6 +59,9 @@ void ImprimeMissil(tMissil missil){
  * @param missil Ponteiro para o missil que tera a memoria liberada.
  */
 void LiberaMissil(tMissil missil){
+
+    if(missil != NULL)
+        free(missil);
 
 }
 
@@ -60,6 +73,7 @@ void LiberaMissil(tMissil missil){
  */
 float GetMissilY(tMissil missil){
 
+    return missil->Y;
 }
 
 /**
@@ -70,6 +84,7 @@ float GetMissilY(tMissil missil){
  */
 float GetMissilX(tMissil missil){
 
+    return missil->X;
 }
 
 /**
@@ -80,6 +95,8 @@ float GetMissilX(tMissil missil){
  */
 float GetMissilPoder(tMissil missil){
 
+    return missil->poderAtaque;
+
 }
 
 /**
@@ -89,5 +106,7 @@ float GetMissilPoder(tMissil missil){
  * @param valor Valor a ser subtraido do poder de ataque do missil.
  */
 void ReduzPoder(tMissil missil, float valor){
+
+    missil->poderAtaque = missil->poderAtaque - valor;
 
 }
