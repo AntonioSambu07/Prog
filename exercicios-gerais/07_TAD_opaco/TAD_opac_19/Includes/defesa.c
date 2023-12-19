@@ -1,5 +1,9 @@
-#ifndef _defesa
-#define _defesa
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "cidade.h"
+#include "missil.h"
+#include "defesa.h"
 
 #define QUADRADO 'Q' /**< Caractere que indica uma defesa do tipo quadrado. */
 #define CIRCULO 'C' /**< Caractere que indica uma defesa do tipo circulo. */
@@ -18,21 +22,27 @@ typedef struct defesa * tDefesa;
  * 
  * @return tDefesa Ponteiro para a defesa criada.
  */
-tDefesa LeDefesa();
+tDefesa LeDefesa(){
+    
+}
 
 /**
  * @brief Imprime as informacoes da defesa.
  * 
  * @param defesa Ponteiro para a defesa que sera impressa.
  */
-void ImprimeDefesa(tDefesa defesa);
+void ImprimeDefesa(tDefesa defesa){
+
+}
 
 /**
  * @brief Libera a memoria alocada para a defesa.
  * 
  * @param defesa Ponteiro para a defesa que tera a memoria liberada.
  */
-void LiberaDefesa(tDefesa defesa);
+void LiberaDefesa(tDefesa defesa){
+
+}
 
 /**
  * @brief Verifica se um ponto esta dentro da area de defesa.
@@ -42,14 +52,18 @@ void LiberaDefesa(tDefesa defesa);
  * @param y Coordenada y do ponto.
  * @return int 1 se o ponto esta dentro da area de defesa, 0 caso contrario.
  */
-int VerificaSeDentroArea(tDefesa defesa, float x, float y);
+int VerificaSeDentroArea(tDefesa defesa, float x, float y){
+
+}
 
 /**
  * @brief Usa a defesa, diminuindo seu poder de defesa.
  * 
  * @param defesa Ponteiro para a defesa que sera usada.
  */
-void UsaDefesa(tDefesa defesa);
+void UsaDefesa(tDefesa defesa){
+
+}
 
 /**
  * @brief Obtem o poder de defesa da defesa.
@@ -57,7 +71,9 @@ void UsaDefesa(tDefesa defesa);
  * @param defesa Ponteiro para a defesa que tera o poder de defesa obtido.
  * @return float Poder de defesa da defesa.
  */
-float GetDefesaPoder(tDefesa defesa);
+float GetDefesaPoder(tDefesa defesa){
+
+}
 
 /**
  * @brief Verifica se a defesa pode defender.
@@ -65,6 +81,7 @@ float GetDefesaPoder(tDefesa defesa);
  * @param defesa Ponteiro para a defesa que sera verificada.
  * @return int 1 se a defesa pode defender, 0 caso contrario.
  */
-int PodeDefender(tDefesa defesa);
+int PodeDefender(tDefesa defesa){
 
-#endif
+}
+
